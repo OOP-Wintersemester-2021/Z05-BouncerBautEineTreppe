@@ -38,18 +38,18 @@ public class BouncerBautEineTreppe extends BouncerApp {
          * der (quadratischen) Treppe und der aktuellen Iteration der Schleife.
          */
         for (int i = 0; i < NUMBER_OF_STEPS; i++) {
-            int numberOfStepsForCurrentThread = NUMBER_OF_STEPS - i;
-            buildThread(numberOfStepsForCurrentThread);
+            int numberOfStepsForCurrentTread = NUMBER_OF_STEPS - i;
+            buildTread(numberOfStepsForCurrentTread);
         }
     }
 
-    private void buildThread(int depthOfThread) {
-        for (int i = 0; i < depthOfThread; i++) {
+    private void buildTread(int depthOfTread) {
+        for (int i = 0; i < depthOfTread; i++) {
             bouncer.move();
             bouncer.paintField(FieldColor.BLUE);
         }
         turnAround();
-        for (int i = 0; i < depthOfThread; i++) {
+        for (int i = 0; i < depthOfTread; i++) {
             bouncer.move();
         }
         turnAround();
@@ -65,7 +65,7 @@ public class BouncerBautEineTreppe extends BouncerApp {
 
     /**
      * Bouncer kehrt von der obersten Stufe der Treppe zu der Position zurück, auf der er zu Beginn des Programms stand
-     *
+     * <p>
      * Vorbedingung: Bouncer steht auf der obersten Stufe der Treppe und blickt nach Westen
      * Ergebnis: Bouncer steht auf genau der gleichen Position wie zu Beginn des Programms und blickt erneut nach Osten
      */
